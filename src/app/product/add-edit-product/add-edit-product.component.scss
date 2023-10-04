@@ -1,0 +1,43 @@
+.product-update-container {
+  max-width: 100%;
+  margin: 0 auto;
+  border-radius: 5px;
+
+  .label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+
+  .input-container {
+    margin-bottom: 20px;
+
+    .input {
+      width: 100%;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+    .description {
+      height: 100px;
+    }
+
+    .error-message {
+      color: #ff0000;
+      font-size: 14px;
+      margin-top: 5px;
+    }
+
+    .p-dropdown {
+      width: 100%;
+    }
+  }
+
+  .button-container {
+    text-align: center;
+
+    .label {
+      width: 100%;
+      margin-top: 10px;
+    }
+  }
+}

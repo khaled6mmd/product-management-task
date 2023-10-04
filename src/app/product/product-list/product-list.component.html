@@ -1,0 +1,26 @@
+<section class="product-container">
+  <div class="button-container">
+    <button class="p-button p-button-info add-product-button" (click)="addProduct()">
+      <i class="pi pi-plus"></i> &nbsp; Add Product
+    </button>
+  </div>
+  <div class="product-card" *ngFor="let product of products$ | async">
+    <div class="badge" *ngIf="product.readyForSell">Ready For Sell</div>
+    <div class="product-tumb">
+      <img class="product-image" [src]="product.image" alt="Product Image">
+    </div>
+    <div class="product-details">
+      <span class="product-category">{{ product.category }}</span>
+      <span class="product-title"><a class="product-link" href="#">{{ (product.title.length > 6) ? (product.title | slice:0:25)+'...' : (product.title) }}</a></span>
+      <p class="product-description">{{ (product.description.length > 6) ? (product.description | slice:0:90)+'...' : (product.description) }}</p>
+      <div class="product-bottom-details">
+        <div class="product-price">{{ product.price }}$ <small class="discount">{{ product.price + 10 | number: '1.2-2' }}$</small></div>
+        <div class="product-links">
+          <a (click)="updateProduct(product.id)" class="p-button p-button-outlined p-button-info update-link">
+            <i class="pi pi-pencil"></i> Update
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
